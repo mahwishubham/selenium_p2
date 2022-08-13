@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Concrete Jungle E2E Test Suite">
+    <test name="E2E Tests">
+        <classes>
+            <class name="com.revature.testcases.LoginTests"></class>
+            <class name="com.revature.testcases.HomeTests"></class>
+            <class name="com.revature.testcases.AddTourTests"></class>
+            <class name="com.revature.testcases.MyToursTests"></class>
+        </classes>
+    </test>
+</suite>
