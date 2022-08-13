@@ -5,6 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage {
 
@@ -44,44 +48,44 @@ public class LoginPage {
     }
 
     public void typeUsername(String username) {
-        // The following line of code is replaced by using PageFactory instead
-//        WebElement usernameInput = driver.findElement(By.id("username"));
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(usernameInput));
         usernameInput.sendKeys(username);
     }
 
     public void typePassword(String password) {
-        // The following line of code is replaced by using PageFactory instead
-//        WebElement passwordInput = driver.findElement(By.id("password"));
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(passwordInput));
         passwordInput.sendKeys(password);
     }
     public void clickLoginButton() {
-        // The following line of code is replaced by using PageFactory instead
-//        WebElement loginButton = driver.findElement(By.id("login-btn"));
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(loginButton));
         loginButton.click();
     }
     public void clickToursButton() {
-        // The following line of code is replaced by using PageFactory instead
-//        WebElement loginButton = driver.findElement(By.id("login-btn"));
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(tourButton));
         tourButton.click();
     }
     public void clickStopsButton() {
-        // The following line of code is replaced by using PageFactory instead
-//        WebElement loginButton = driver.findElement(By.id("login-btn"));
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(stopsButton));
         stopsButton.click();
     }
     public void clickGuidesButton() {
-        // The following line of code is replaced by using PageFactory instead
-//        WebElement loginButton = driver.findElement(By.id("login-btn"));
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(guidesButton));
         guidesButton.click();
     }
     public void clickHomeButton() {
-        // The following line of code is replaced by using PageFactory instead
-//        WebElement loginButton = driver.findElement(By.id("login-btn"));
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(homeButton));
         homeButton.click();
     }
     public void clickRegisterButton() {
-        // The following line of code is replaced by using PageFactory instead
-//        WebElement loginButton = driver.findElement(By.id("login-btn"));
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(registerButton));
         registerButton.click();
     }
 

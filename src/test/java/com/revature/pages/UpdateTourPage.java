@@ -45,18 +45,28 @@ public class UpdateTourPage {
     private WebElement updateButton;
 
     public void clickDayDropdown(){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(daysDropdown));
         daysDropdown.click();
     }
     public void typeAmount(String price){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(priceInput));
         priceInput.sendKeys(price);
     }
     public void clickInactiveRadio(){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(inactiveRadio));
         inactiveRadio.click();
     }
     public void clickActiveRadio(){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(activeRadio));
         activeRadio.click();
     }
     public void clickAddTour(){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(updateButton));
         updateButton.click();
     }
 }

@@ -60,48 +60,60 @@ public class MyToursPage {
     private WebElement loginButton;
 
     public void typeUsername() {
-        // The following line of code is replaced by using PageFactory instead
-//        WebElement usernameInput = driver.findElement(By.id("username"));
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(usernameInput));
         usernameInput.sendKeys("mc@a.ca");
     }
 
     public void typePassword() {
-        // The following line of code is replaced by using PageFactory instead
-//        WebElement passwordInput = driver.findElement(By.id("password"));
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(passwordInput));
         passwordInput.sendKeys("password");
     }
     public void clickStopButton() {
-        // The following line of code is replaced by using PageFactory instead
-//        WebElement loginButton = driver.findElement(By.id("login-btn"));
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(stopButton));
         stopButton.click();
     }
     public void clickGuideButton() {
-        // The following line of code is replaced by using PageFactory instead
-//        WebElement loginButton = driver.findElement(By.id("login-btn"));
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(guideButton));
         guideButton.click();
     }
     public void clickLoginButton() {
-        // The following line of code is replaced by using PageFactory instead
-//        WebElement loginButton = driver.findElement(By.id("login-btn"));
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(loginButton));
         loginButton.click();
     }
 
     public void clickUpdateFirstButton(){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(updateFirstButton));
         updateFirstButton.click();
     }
     public void clickDeleteFirstButton(){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(deleteFirstButton));
         deleteFirstButton.click();
     }
     public void clickLogoutButton(){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(logoutButton));
         logoutButton.click();
     }
     public void clickHomeButton(){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(homeButton));
         homeButton.click();
     }
     public void clickAllTours(){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(allTourButton));
         allTourButton.click();
     }
     public void clickAddTour(){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(addTourButton));
         addTourButton.click();
     }
 }

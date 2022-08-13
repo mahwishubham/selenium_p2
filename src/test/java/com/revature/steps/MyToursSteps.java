@@ -105,4 +105,5 @@ public class MyToursSteps {
         driver.switchTo().alert().accept();
 
     }
+
 }

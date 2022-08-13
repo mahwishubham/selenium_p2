@@ -6,6 +6,8 @@ import com.revature.pages.ToursPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -55,5 +57,47 @@ public class ToursSteps {
     @And("I click on the home button in tours")
     public void iClickOnTheHomeButtonInTours() {
         toursPage.clickHomeButton();
+    }
+
+    @When("I am logged in as a user")
+    public void iAmLoggedInAsAUser() {
+        toursPage.clickLoginButton();
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.urlContains("login.html"));
+        toursPage.ToursPageLoggedUser();
+
+    }
+
+    @And("I click on the logout button in tours")
+    public void iClickOnTheLogoutButtonInTours() {
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOfElementLocated(By.id("logout")));
+        toursPage.clickLogoutButton();
+    }
+
+    @And("I accept the alert in tours")
+    public void iAcceptTheAlertInTours() {
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().accept();
+    }
+
+    @When("I am logged in as a guide")
+    public void iAmLoggedInAsAGuide() {
+        toursPage.clickLoginButton();
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.urlContains("login.html"));
+        toursPage.ToursPageLoggedGuide();
+    }
+
+
+    @And("I click on the add tour button in tours")
+    public void iClickOnTheAddTourButtonInTours() {
+        toursPage.clickAddTourButton();
+    }
+
+    @And("I click on the my tour button in tours")
+    public void iClickOnTheMyTourButtonInTours() {
+        toursPage.clickMyTourButton();
     }
 }

@@ -1,6 +1,7 @@
 package com.revature.steps;
 import com.revature.testrunner.testrunner;
 import com.revature.pages.HomePage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -105,5 +106,49 @@ public class HomeSteps {
             String expected = "http://ec2-35-91-56-192.us-west-2.compute.amazonaws.com/login.html";
             Assert.assertEquals(actual, expected);
         }
+
+    @When("I am logged in as a user on home page")
+    public void iAmLoggedInAsAUserOnHomePage() {
+        homePage.clickLoginButton();
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.urlContains("login.html"));
+        homePage.loggedInAsUser();
     }
+
+    @And("I click on the all tours button on home page")
+    public void iClickOnTheAllToursButtonOnHomePage() {
+            homePage.clickAllToursButton();
+    }
+
+    @And("I click on the logout button on home page")
+    public void iClickOnTheLogoutButtonOnHomePage() throws InterruptedException {
+
+            homePage.clickLogoutButton();
+    }
+
+    @And("I accept the alert on home page")
+    public void iAcceptTheAlertOnHomePage() {
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().accept();
+    }
+
+    @When("I am logged in as a guide on home page")
+    public void iAmLoggedInAsAGuideOnHomePage() {
+        homePage.clickLoginButton();
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.urlContains("login.html"));
+        homePage.loggedInAsGuide();
+    }
+
+    @And("I click on the add tour button on home page")
+    public void iClickOnTheAddTourButtonOnHomePage() {
+            homePage.clickAddTourButton();
+    }
+
+    @And("I click on the my tours button")
+    public void iClickOnTheMyToursButton() {
+            homePage.clickMyToursButton();
+    }
+}
 

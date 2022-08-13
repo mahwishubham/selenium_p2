@@ -27,13 +27,22 @@ public class ToursPage {
     @FindBy(id = "home")
     private WebElement homeButton;
 
+    @FindBy(id = "logout")
+    private WebElement logoutButton;
+
+    @FindBy(id = "addtours")
+    private WebElement addtourButton;
+
+    @FindBy(id = "mytours")
+    private WebElement mytoursButton;
+
     public ToursPage(WebDriver driver) {
         this.driver = driver;
         this.driver.manage().window().maximize();
         PageFactory.initElements(driver, this);
     }
-    public void ToursPageLoggedUser(WebDriver login){
-        LoginPage loginPage = new LoginPage(login);
+    public void ToursPageLoggedUser(){
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.typeUsername("jd03@a.ca");
         loginPage.typePassword("password");
 
@@ -43,8 +52,8 @@ public class ToursPage {
 
         wdw.until(ExpectedConditions.urlContains("tours.html"));
     }
-    public void ToursPageLoggedGuide(WebDriver guide){
-        LoginPage loginPage = new LoginPage(guide);
+    public void ToursPageLoggedGuide(){
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.typeUsername("mc@a.ca");
         loginPage.typePassword("password");
 
@@ -57,21 +66,51 @@ public class ToursPage {
     }
 
     public void clickGuideButton() {
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(guidesButton));
         guidesButton.click();
     }
 
     public void clickStopsButton() {
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(stopsButton));
         stopsButton.click();
     }
 
     public void clickLoginButton() {
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(loginButton));
         loginButton.click();
     }
 
     public void clickRegisterButton() {
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(registerButton));
         registerButton.click();
     }
 
-    public void clickHomeButton() {homeButton.click();
+    public void clickHomeButton() {
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(homeButton));
+        homeButton.click();
+    }
+
+    public void clickLogoutButton() {
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(logoutButton));
+        logoutButton.click();
+    }
+
+
+    public void clickAddTourButton() {
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(addtourButton));
+        addtourButton.click();
+    }
+
+    public void clickMyTourButton() {
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(mytoursButton));
+        mytoursButton.click();
     }
 }

@@ -43,21 +43,33 @@ public class RegisterPage {
     private WebElement registerButton;
 
     public void typeEmail(String email){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(emailInput));
         emailInput.sendKeys(email);
     }
     public void typePassword(String password){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(passwordInput));
         passwordInput.sendKeys(password);
     }
     public void typeFirstName(String name){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(firstnameInput));
         firstnameInput.sendKeys(name);
     }
     public void typeLastName(String lastname){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(lastnameInput));
         lastnameInput.sendKeys(lastname);
     }
     public void typePhone(String phone){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(passwordInput));
         phoneInput.sendKeys(phone);
     }
     public void clickRegister(){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(registerButton));
         registerButton.click();
     }
     public String getError(){

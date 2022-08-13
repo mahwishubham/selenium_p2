@@ -18,15 +18,13 @@ import static com.revature.testrunner.testrunner.driver;
 
 public class LoginSteps {
     public LoginPage loginPage;
-    public MyToursPage myToursPage;
-    public HomePage homePage;
+
 
     @Given("I am at the login page")
     public void i_am_at_login_page(){
         driver.get("http://ec2-35-91-56-192.us-west-2.compute.amazonaws.com/login.html");
         loginPage = new LoginPage(driver);
-        homePage = new HomePage(driver);
-        myToursPage = new MyToursPage(driver);
+
     }
     @When("I type in a valid username {string}")
     public void i_type_valid_username(String username){loginPage.typeUsername(username);
@@ -83,6 +81,7 @@ public class LoginSteps {
 
     @When("I click on the home button in login")
     public void iClickOnTheHomeButtonInLogin() {
+
     loginPage.clickHomeButton();
     }
 
