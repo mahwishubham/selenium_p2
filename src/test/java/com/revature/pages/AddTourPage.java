@@ -111,16 +111,19 @@ public class AddTourPage {
     private WebElement logoutButton;
 
     public void typePrice(String price){
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeSelected(priceInput));
         priceInput.sendKeys(price);
     }
     public void typeTitle(String title){
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeSelected(titleInput));
         titleInput.sendKeys(title);
     }
 
     public void selectDayDropdown(int day) throws InterruptedException {
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(dayDropdown));
         Select se = new Select(dayDropdown);
 
         se.selectByIndex(day);
@@ -133,40 +136,47 @@ public class AddTourPage {
         poiDropdown.click();
         poiInput.clear();
 
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeSelected(poiInput));
 
         if (Objects.equals((op1), 1) || Objects.equals(op2, 1) ||Objects.equals(op3, 1)) {
             poiInput.sendKeys("statue");
+            wdw.until(ExpectedConditions.visibilityOf(statueSelect));
             statueSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 2) || Objects.equals(op2, 2) ||Objects.equals(op3, 2)) {
             poiInput.sendKeys("central");
+            wdw.until(ExpectedConditions.visibilityOf(parkSelect));
             parkSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 3) || Objects.equals(op2, 3) ||Objects.equals(op3, 3)) {
             poiInput.sendKeys("Rock");
+            wdw.until(ExpectedConditions.visibilityOf(rockefellerSelect));
             rockefellerSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 4) || Objects.equals(op2, 4) ||Objects.equals(op3, 4)) {
             poiInput.sendKeys("The me");
+            wdw.until(ExpectedConditions.visibilityOf(metSelect));
             metSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 5) || Objects.equals(op2, 5) ||Objects.equals(op3, 5)) {
             poiInput.sendKeys("Broad");
+            wdw.until(ExpectedConditions.visibilityOf(broadwaySelect));
             broadwaySelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 6) || Objects.equals(op2, 6) ||Objects.equals(op3, 6)) {
             poiInput.sendKeys("The emp");
+            wdw.until(ExpectedConditions.visibilityOf(empireSelect));
             empireSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -174,6 +184,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 7) || Objects.equals(op2, 7) ||Objects.equals(op3, 7)) {
             poiInput.sendKeys("9/11");
+            wdw.until(ExpectedConditions.visibilityOf(memoriaSelect));
             memoriaSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -181,6 +192,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 8) || Objects.equals(op2, 8) ||Objects.equals(op3, 8)) {
             poiInput.sendKeys("the high");
+            wdw.until(ExpectedConditions.visibilityOf(highlineSelect));
             highlineSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -188,6 +200,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 9) || Objects.equals(op2, 9) ||Objects.equals(op3, 9)) {
             poiInput.sendKeys("the museum");
+            wdw.until(ExpectedConditions.visibilityOf(museumSelect));
             museumSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -195,6 +208,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 10) || Objects.equals(op2, 10) ||Objects.equals(op3, 10)) {
             poiInput.sendKeys("Times");
+            wdw.until(ExpectedConditions.visibilityOf(timesSelect));
             timesSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -202,6 +216,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 11) || Objects.equals(op2, 11) ||Objects.equals(op3, 11)) {
             poiInput.sendKeys("The Brookl");
+            wdw.until(ExpectedConditions.visibilityOf(bridgeSelect));
             bridgeSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -209,6 +224,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 12) || Objects.equals(op2, 12) ||Objects.equals(op3, 12)) {
             poiInput.sendKeys("fifth");
+            wdw.until(ExpectedConditions.visibilityOf(avenueSelect));
             avenueSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -217,12 +233,14 @@ public class AddTourPage {
     }
 
     public void clickAddTourButton() {
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(addButton));
         addButton.click();
     }
 
     public String getError() {
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(errorMessage));
         return errorMessage.getText();
     }
     public void selectAllOptions(int op1, int op2, int op3, int op4, int op5, int op6) {
@@ -230,40 +248,47 @@ public class AddTourPage {
         poiDropdown.click();
         poiInput.clear();
 
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(poiInput));
 
         if (Objects.equals((op1), 1) || Objects.equals(op2, 1) ||Objects.equals(op3, 1) ||Objects.equals(op4, 1) || Objects.equals(op5, 1)  || Objects.equals(op6, 1)) {
             poiInput.sendKeys("statue");
+            wdw.until(ExpectedConditions.visibilityOf(statueSelect));
             statueSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 2) || Objects.equals(op2, 2) ||Objects.equals(op3, 2) ||Objects.equals(op4, 2) || Objects.equals(op5, 2)  || Objects.equals(op6, 2)) {
             poiInput.sendKeys("central");
+            wdw.until(ExpectedConditions.visibilityOf(parkSelect));
             parkSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 3) || Objects.equals(op2, 3) ||Objects.equals(op3, 3) ||Objects.equals(op4, 3) || Objects.equals(op5, 3)  || Objects.equals(op6, 3)) {
             poiInput.sendKeys("Rock");
+            wdw.until(ExpectedConditions.visibilityOf(rockefellerSelect));
             rockefellerSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 4) || Objects.equals(op2, 4) ||Objects.equals(op3, 4) ||Objects.equals(op4, 4) || Objects.equals(op5, 4)  || Objects.equals(op6, 4)) {
             poiInput.sendKeys("The me");
+            wdw.until(ExpectedConditions.visibilityOf(metSelect));
             metSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 5) || Objects.equals(op2, 5) ||Objects.equals(op3, 5) ||Objects.equals(op4, 5) || Objects.equals(op5, 5)  || Objects.equals(op6, 5)) {
             poiInput.sendKeys("Broad");
+            wdw.until(ExpectedConditions.visibilityOf(broadwaySelect));
             broadwaySelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 6) || Objects.equals(op2, 6) ||Objects.equals(op3, 6) ||Objects.equals(op4, 6) || Objects.equals(op5, 6)  || Objects.equals(op6, 6)) {
             poiInput.sendKeys("The emp");
+            wdw.until(ExpectedConditions.visibilityOf(empireSelect));
             empireSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -271,6 +296,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 7) || Objects.equals(op2, 7) ||Objects.equals(op3, 7) ||Objects.equals(op4, 7) || Objects.equals(op5, 7)  || Objects.equals(op6, 7)) {
             poiInput.sendKeys("9/11");
+            wdw.until(ExpectedConditions.visibilityOf(memoriaSelect));
             memoriaSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -278,6 +304,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 8) || Objects.equals(op2, 8) ||Objects.equals(op3, 8) ||Objects.equals(op4, 8) || Objects.equals(op5, 8)  || Objects.equals(op6, 8)) {
             poiInput.sendKeys("the high");
+            wdw.until(ExpectedConditions.visibilityOf(highlineSelect));
             highlineSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -285,6 +312,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 9) || Objects.equals(op2, 9) ||Objects.equals(op3, 9) ||Objects.equals(op4, 9) || Objects.equals(op5, 9)  || Objects.equals(op6, 9)) {
             poiInput.sendKeys("the museum");
+            wdw.until(ExpectedConditions.visibilityOf(museumSelect));
             museumSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -292,6 +320,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 10) || Objects.equals(op2, 10) ||Objects.equals(op3, 10) ||Objects.equals(op4, 10) || Objects.equals(op5, 10)  || Objects.equals(op6, 10)) {
             poiInput.sendKeys("Times");
+            wdw.until(ExpectedConditions.visibilityOf(timesSelect));
             timesSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -299,6 +328,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 11) || Objects.equals(op2, 11) ||Objects.equals(op3, 11) ||Objects.equals(op4, 11) || Objects.equals(op5, 11)  || Objects.equals(op6, 11)) {
             poiInput.sendKeys("The Brookl");
+            wdw.until(ExpectedConditions.visibilityOf(bridgeSelect));
             bridgeSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -306,6 +336,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 12) || Objects.equals(op2, 12) ||Objects.equals(op3, 12) ||Objects.equals(op4, 12) || Objects.equals(op5, 12)  || Objects.equals(op6, 12)) {
             poiInput.sendKeys("fifth");
+            wdw.until(ExpectedConditions.visibilityOf(avenueSelect));
             avenueSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -317,40 +348,47 @@ public class AddTourPage {
         poiDropdown.click();
         poiInput.clear();
 
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(poiInput));
 
         if (Objects.equals((op1), 1) || Objects.equals(op2, 1) ||Objects.equals(op3, 1) ||Objects.equals(op4, 1)) {
             poiInput.sendKeys("statue");
+            wdw.until(ExpectedConditions.visibilityOf(statueSelect));
             statueSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 2) || Objects.equals(op2, 2) ||Objects.equals(op3, 2) ||Objects.equals(op4, 2)) {
             poiInput.sendKeys("central");
+            wdw.until(ExpectedConditions.visibilityOf(parkSelect));
             parkSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 3) || Objects.equals(op2, 3) ||Objects.equals(op3, 3) ||Objects.equals(op4, 3)) {
             poiInput.sendKeys("Rock");
+            wdw.until(ExpectedConditions.visibilityOf(rockefellerSelect));
             rockefellerSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 4) || Objects.equals(op2, 4) ||Objects.equals(op3, 4) ||Objects.equals(op4, 4)) {
             poiInput.sendKeys("The me");
+            wdw.until(ExpectedConditions.visibilityOf(metSelect));
             metSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 5) || Objects.equals(op2, 5) ||Objects.equals(op3, 5) ||Objects.equals(op4, 5)) {
             poiInput.sendKeys("Broad");
+            wdw.until(ExpectedConditions.visibilityOf(broadwaySelect));
             broadwaySelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 6) || Objects.equals(op2, 6) ||Objects.equals(op3, 6) ||Objects.equals(op4, 6)) {
             poiInput.sendKeys("The emp");
+            wdw.until(ExpectedConditions.visibilityOf(empireSelect));
             empireSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -358,6 +396,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 7) || Objects.equals(op2, 7) ||Objects.equals(op3, 7) ||Objects.equals(op4, 7)) {
             poiInput.sendKeys("9/11");
+            wdw.until(ExpectedConditions.visibilityOf(memoriaSelect));
             memoriaSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -365,6 +404,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 8) || Objects.equals(op2, 8) ||Objects.equals(op3, 8) ||Objects.equals(op4, 8) ) {
             poiInput.sendKeys("the high");
+            wdw.until(ExpectedConditions.visibilityOf(highlineSelect));
             highlineSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -372,6 +412,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 9) || Objects.equals(op2, 9) ||Objects.equals(op3, 9) ||Objects.equals(op4, 9) ) {
             poiInput.sendKeys("the museum");
+            wdw.until(ExpectedConditions.visibilityOf(museumSelect));
             museumSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -379,6 +420,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 10) || Objects.equals(op2, 10) ||Objects.equals(op3, 10) ||Objects.equals(op4, 10)) {
             poiInput.sendKeys("Times");
+            wdw.until(ExpectedConditions.visibilityOf(timesSelect));
             timesSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -386,6 +428,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 11) || Objects.equals(op2, 11) ||Objects.equals(op3, 11) ||Objects.equals(op4, 11)) {
             poiInput.sendKeys("The Brookl");
+            wdw.until(ExpectedConditions.visibilityOf(bridgeSelect));
             bridgeSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -393,6 +436,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 12) || Objects.equals(op2, 12) ||Objects.equals(op3, 12) ||Objects.equals(op4, 12)) {
             poiInput.sendKeys("fifth");
+            wdw.until(ExpectedConditions.visibilityOf(avenueSelect));
             avenueSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -404,40 +448,47 @@ public class AddTourPage {
         poiDropdown.click();
         poiInput.clear();
 
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(poiInput));
 
         if (Objects.equals((op1), 1) || Objects.equals(op2, 1) ||Objects.equals(op3, 1) ||Objects.equals(op4, 1) || Objects.equals(op5, 1)) {
             poiInput.sendKeys("statue");
+            wdw.until(ExpectedConditions.visibilityOf(statueSelect));
             statueSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 2) || Objects.equals(op2, 2) ||Objects.equals(op3, 2) ||Objects.equals(op4, 2) || Objects.equals(op5, 2)) {
             poiInput.sendKeys("central");
+            wdw.until(ExpectedConditions.visibilityOf(parkSelect));
             parkSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 3) || Objects.equals(op2, 3) ||Objects.equals(op3, 3) ||Objects.equals(op4, 3) || Objects.equals(op5, 3)) {
             poiInput.sendKeys("Rock");
+            wdw.until(ExpectedConditions.visibilityOf(rockefellerSelect));
             rockefellerSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 4) || Objects.equals(op2, 4) ||Objects.equals(op3, 4) ||Objects.equals(op4, 4) || Objects.equals(op5, 4)) {
             poiInput.sendKeys("The me");
+            wdw.until(ExpectedConditions.visibilityOf(metSelect));
             metSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 5) || Objects.equals(op2, 5) ||Objects.equals(op3, 5) ||Objects.equals(op4, 5) || Objects.equals(op5, 5)) {
             poiInput.sendKeys("Broad");
+            wdw.until(ExpectedConditions.visibilityOf(broadwaySelect));
             broadwaySelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
         }
         if (Objects.equals((op1), 6) || Objects.equals(op2, 6) ||Objects.equals(op3, 6) ||Objects.equals(op4, 6) || Objects.equals(op5, 6)) {
             poiInput.sendKeys("The emp");
+            wdw.until(ExpectedConditions.visibilityOf(empireSelect));
             empireSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -445,6 +496,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 7) || Objects.equals(op2, 7) ||Objects.equals(op3, 7) ||Objects.equals(op4, 7) || Objects.equals(op5, 7)) {
             poiInput.sendKeys("9/11");
+            wdw.until(ExpectedConditions.visibilityOf(memoriaSelect));
             memoriaSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -452,6 +504,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 8) || Objects.equals(op2, 8) ||Objects.equals(op3, 8) ||Objects.equals(op4, 8) || Objects.equals(op5, 8)) {
             poiInput.sendKeys("the high");
+            wdw.until(ExpectedConditions.visibilityOf(highlineSelect));
             highlineSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -459,6 +512,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 9) || Objects.equals(op2, 9) ||Objects.equals(op3, 9) ||Objects.equals(op4, 9) || Objects.equals(op5, 9)) {
             poiInput.sendKeys("the museum");
+            wdw.until(ExpectedConditions.visibilityOf(museumSelect));
             museumSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -466,6 +520,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 10) || Objects.equals(op2, 10) ||Objects.equals(op3, 10) ||Objects.equals(op4, 10) || Objects.equals(op5, 10)) {
             poiInput.sendKeys("Times");
+            wdw.until(ExpectedConditions.visibilityOf(timesSelect));
             timesSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -473,6 +528,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 11) || Objects.equals(op2, 11) ||Objects.equals(op3, 11) ||Objects.equals(op4, 11) || Objects.equals(op5, 11)) {
             poiInput.sendKeys("The Brookl");
+            wdw.until(ExpectedConditions.visibilityOf(bridgeSelect));
             bridgeSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();
@@ -480,6 +536,7 @@ public class AddTourPage {
 
         if (Objects.equals((op1), 12) || Objects.equals(op2, 12) ||Objects.equals(op3, 12) ||Objects.equals(op4, 12) || Objects.equals(op5, 12)) {
             poiInput.sendKeys("fifth");
+            wdw.until(ExpectedConditions.visibilityOf(avenueSelect));
             avenueSelect.click();
             poiInput.sendKeys(Keys.BACK_SPACE);
             poiDropdown.click();

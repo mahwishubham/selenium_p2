@@ -1,9 +1,9 @@
 Feature: tours
 
-  Scenario: At tours page not logged in
-    Given I am at the tours page
-    And I click on the guides button in tours
-    Then I should be redirected to index.html#guides
+#  Scenario: At tours page not logged in
+#    Given I am at the tours page
+#    And I click on the guides button in tours
+#    Then I should be redirected to index.html#guides
 #
 #  Scenario: At tours page not logged in
 #    Given I am at the tours page

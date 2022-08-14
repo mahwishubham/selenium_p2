@@ -1,5 +1,5 @@
 Feature: Login
-#
+
 #
 #  Scenario: log in user
 #    Given I am at the login page

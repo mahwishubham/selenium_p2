@@ -35,7 +35,7 @@ Feature: Home
 #  When I am logged in as a user on home page
 #  And I click on the tours button
 #  Then I should be redirected to index.html#home
-
+#
 #  Scenario: I click on current tours while logged in as user
 #    Given I am at the home page
 #    When I am logged in as a user on home page
@@ -67,7 +67,7 @@ Feature: Home
 #    And I accept the alert on home page
 #    Then I should be redirected to index.html
 #
-
+#
 #  Scenario: I click on tours while logged in as guide
 #    Given I am at the home page
 #    When I am logged in as a guide on home page
@@ -109,10 +109,10 @@ Feature: Home
 #    When I am logged in as a guide on home page
 #    And I click on the all tours button on home page
 #    Then I should be redirected to tours.html
-#
-#  Scenario: I click on logout while logged in as guide
-#    Given I am at the home page
-#    When I am logged in as a guide on home page
-#    And I click on the logout button on home page
-#    And I accept the alert
-#    Then I should be redirected to index.html
+
+  Scenario: I click on logout while logged in as guide
+    Given I am at the home page
+    When I am logged in as a guide on home page
+    And I click on the logout button on home page
+    And I accept the alert
+    Then I should be redirected to index.html

@@ -43,41 +43,49 @@ public class LoginPage {
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
-//        this.driver.manage().window().maximize();
+        this.driver.manage().window().maximize();
         PageFactory.initElements(driver, this);
     }
 
     public void typeUsername(String username) {
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(usernameInput));
         usernameInput.sendKeys(username);
     }
 
     public void typePassword(String password) {
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.visibilityOf(passwordInput));
         passwordInput.sendKeys(password);
     }
     public void clickLoginButton() {
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(loginButton));
         loginButton.click();
     }
     public void clickToursButton() {
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(tourButton));
         tourButton.click();
     }
     public void clickStopsButton() {
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(stopsButton));
         stopsButton.click();
     }
     public void clickGuidesButton() {
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(guidesButton));
         guidesButton.click();
     }
     public void clickHomeButton() {
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(homeButton));
         homeButton.click();
     }
     public void clickRegisterButton() {
-
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wdw.until(ExpectedConditions.elementToBeClickable(registerButton));
         registerButton.click();
     }
 
