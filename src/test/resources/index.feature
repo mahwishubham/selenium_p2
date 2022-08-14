@@ -30,17 +30,17 @@ Feature: Home
     When I click on the login button
     Then I should be redirected to login.html
 
-Scenario: I click on tours while logged in as user
-  Given I am at the home page
-  When I am logged in as a user on home page
-  And I click on the tours button
-  Then I should be redirected to index.html#home
-
-  Scenario: I click on current tours while logged in as user
-    Given I am at the home page
-    When I am logged in as a user on home page
-    And I click on the current tours button
-    Then I should be redirected to tours.html
+#Scenario: I click on tours while logged in as user
+#  Given I am at the home page
+#  When I am logged in as a user on home page
+#  And I click on the tours button
+#  Then I should be redirected to index.html#home
+#
+#  Scenario: I click on current tours while logged in as user
+#    Given I am at the home page
+#    When I am logged in as a user on home page
+#    And I click on the current tours button
+#    Then I should be redirected to tours.html
 
   Scenario: I click on stops while logged in as user
     Given I am at the home page
