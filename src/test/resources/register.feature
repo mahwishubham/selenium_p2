@@ -24,7 +24,7 @@ Feature: Register
 #
     Scenario: Valid Registration
       Given I am at the registration page
-      When I type in "valid21@email.com" for email
+      When I type in "valid45@email.com" for email
       And I type in "PassWord123!" for password
       And I type in "John" for first name
       And I type in "Doe" for last name
