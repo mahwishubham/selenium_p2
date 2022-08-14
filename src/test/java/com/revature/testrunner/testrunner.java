@@ -24,7 +24,7 @@ public class testrunner extends AbstractTestNGCucumberTests{
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
 //        options.addArguments("−−incognito");
-        options.addArguments("--incognito");
+        options.addArguments("--headless");
 
         driver = new ChromeDriver(options);
     }
