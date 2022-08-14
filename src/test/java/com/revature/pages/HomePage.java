@@ -112,12 +112,12 @@ public class HomePage {
     }
 
     public void loggedInAsGuide() {
-        LoginPage loginPage = new LoginPage(driver);
-        ToursPage toursPage = new ToursPage(driver);
-        loginPage.typeUsername("mc@a.ca");
-        loginPage.typePassword("password");
-
-        loginPage.clickLoginButton();
+//        LoginPage loginPage = new LoginPage(driver);
+        MyToursPage toursPage = new MyToursPage(driver);
+//        loginPage.typeUsername("mc@a.ca");
+//        loginPage.typePassword("password");
+//
+//        loginPage.clickLoginButton();
 
         WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
 
