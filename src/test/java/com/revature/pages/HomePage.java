@@ -17,9 +17,7 @@ public class HomePage {
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
-        this.driver.manage().window().maximize();
         PageFactory.initElements(driver, this);
-        ToursPage toursPage = new ToursPage(driver);
     }
     @FindBy(xpath="//body/nav[1]/div[1]/span[1]/div[1]/a[1]")
     private WebElement tourButton;
@@ -85,9 +83,6 @@ public class HomePage {
 
         loginPage.clickLoginButton();
 
-        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
-
-        wdw.until(ExpectedConditions.urlContains("tours.html"));
 
         toursPage.clickHomeButton();
     }
@@ -110,9 +105,7 @@ public class HomePage {
 
         loginPage.clickLoginButton();
 
-        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
 
-        wdw.until(ExpectedConditions.urlContains("mytours.html"));
 
         toursPage.clickHomeButton();
     }
@@ -123,7 +116,7 @@ public class HomePage {
     }
 
     public void clickMyToursButton() {
-       
+
         mytoursbutton.click();
     }
 }
