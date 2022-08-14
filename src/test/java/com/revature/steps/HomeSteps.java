@@ -30,7 +30,7 @@ public class HomeSteps {
         }
 
         @When("I click on the tours button")
-        public void i_click_tours_button(){
+        public void i_click_tours_button() throws InterruptedException {
             homePage.clickToursButton();
         }
         @Then("I should be redirected to index.html#home")

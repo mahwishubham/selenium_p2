@@ -50,8 +50,8 @@ public class HomePage {
     private WebElement addtourbutton;
 
 
-    public void clickToursButton() {
-
+    public void clickToursButton() throws InterruptedException {
+Thread.sleep(2);
         tourButton.click();
     }
     public void clickStopsButton() {
