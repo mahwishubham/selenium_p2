@@ -111,13 +111,9 @@ public class AddTourPage {
     private WebElement logoutButton;
 
     public void typePrice(String price){
-        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
-        wdw.until(ExpectedConditions.elementToBeSelected(priceInput));
         priceInput.sendKeys(price);
     }
     public void typeTitle(String title){
-        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
-        wdw.until(ExpectedConditions.elementToBeSelected(titleInput));
         titleInput.sendKeys(title);
     }
 
@@ -137,7 +133,6 @@ public class AddTourPage {
         poiInput.clear();
 
         WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
-        wdw.until(ExpectedConditions.elementToBeSelected(poiInput));
 
         if (Objects.equals((op1), 1) || Objects.equals(op2, 1) ||Objects.equals(op3, 1)) {
             poiInput.sendKeys("statue");
