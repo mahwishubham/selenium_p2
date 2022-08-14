@@ -17,9 +17,9 @@ public class HomePage {
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
-        this.driver.manage().window().maximize();
+//        this.driver.manage().window().maximize();
         PageFactory.initElements(driver, this);
-        ToursPage toursPage = new ToursPage(driver);
+//        ToursPage toursPage = new ToursPage(driver);
     }
     @FindBy(xpath="//body/nav[1]/div[1]/span[1]/div[1]/a[1]")
     private WebElement tourButton;
