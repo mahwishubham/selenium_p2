@@ -96,6 +96,7 @@ public class HomePage {
         wdw.until(ExpectedConditions.urlContains("tours.html"));
         ToursPage toursPage = new ToursPage(driver);
         toursPage.clickHomeButton();
+        wdw.until(ExpectedConditions.urlContains("index.html"));
     }
 
     public void clickLogoutButton() {
@@ -112,7 +113,7 @@ public class HomePage {
 
     public void loggedInAsGuide() {
         LoginPage loginPage = new LoginPage(driver);
-        ToursPage toursPage = new ToursPage(driver);
+        MyToursPage mytoursPage = new MyToursPage(driver);
         loginPage.typeUsername("mc@a.ca");
         loginPage.typePassword("password");
 
@@ -122,7 +123,8 @@ public class HomePage {
 
         wdw.until(ExpectedConditions.urlContains("mytours.html"));
 
-        toursPage.clickHomeButton();
+        mytoursPage.clickHomeButton();
+        wdw.until(ExpectedConditions.urlContains("index.html"));
     }
 
     public void clickAddTourButton() {
