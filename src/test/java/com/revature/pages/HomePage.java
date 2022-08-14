@@ -113,7 +113,7 @@ public class HomePage {
 
     public void loggedInAsGuide() {
         LoginPage loginPage = new LoginPage(driver);
-        MyToursPage mytoursPage = new MyToursPage(driver);
+        ToursPage toursPage = new ToursPage(driver);
         loginPage.typeUsername("mc@a.ca");
         loginPage.typePassword("password");
 
@@ -123,7 +123,7 @@ public class HomePage {
 
         wdw.until(ExpectedConditions.urlContains("mytours.html"));
 
-        mytoursPage.clickHomeButton();
+        toursPage.clickHomeButton();
         wdw.until(ExpectedConditions.urlContains("index.html"));
     }
 
