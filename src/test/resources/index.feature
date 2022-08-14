@@ -15,26 +15,26 @@ Feature: Home
     When I click on the stops button
     Then I should be redirected to index.html#pois
 
-  Scenario: I click on guides while not logged in
-    Given I am at the home page
-    When I click on the guides button
-    Then I should be redirected to index.html#guides
-
-  Scenario: I click on register while not logged in
-    Given I am at the home page
-    When I click on the register button
-    Then I should be redirected to registration.html
-
-  Scenario: I click on login while not logged in
-    Given I am at the home page
-    When I click on the login button
-    Then I should be redirected to login.html
-
-Scenario: I click on tours while logged in as user
-  Given I am at the home page
-  When I am logged in as a user on home page
-  And I click on the tours button
-  Then I should be redirected to index.html#home
+#  Scenario: I click on guides while not logged in
+#    Given I am at the home page
+#    When I click on the guides button
+#    Then I should be redirected to index.html#guides
+#
+#  Scenario: I click on register while not logged in
+#    Given I am at the home page
+#    When I click on the register button
+#    Then I should be redirected to registration.html
+#
+#  Scenario: I click on login while not logged in
+#    Given I am at the home page
+#    When I click on the login button
+#    Then I should be redirected to login.html
+#
+#Scenario: I click on tours while logged in as user
+#  Given I am at the home page
+#  When I am logged in as a user on home page
+#  And I click on the tours button
+#  Then I should be redirected to index.html#home
 #
 #  Scenario: I click on current tours while logged in as user
 #    Given I am at the home page
