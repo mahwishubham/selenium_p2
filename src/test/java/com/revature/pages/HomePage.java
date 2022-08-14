@@ -17,7 +17,7 @@ public class HomePage {
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
-//        driver.manage().window().maximize();
+        driver.manage().window().maximize();
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath="//body/nav[1]/div[1]/span[1]/div[1]/a[1]")
