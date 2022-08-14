@@ -18,7 +18,7 @@ public class RegisterPage {
 
     public RegisterPage(WebDriver driver) {
         this.driver = driver;
-        this.driver.manage().window().maximize();
+//        this.driver.manage().window().maximize();
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/form[1]/p[1]/p[1]")

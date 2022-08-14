@@ -85,7 +85,7 @@ public class HomePage {
 
     public void loggedInAsUser() {
         LoginPage loginPage = new LoginPage(driver);
-        ToursPage toursPage = new ToursPage(driver);
+
         loginPage.typeUsername("jd03@a.ca");
         loginPage.typePassword("password");
 
@@ -94,7 +94,7 @@ public class HomePage {
         WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
 
         wdw.until(ExpectedConditions.urlContains("tours.html"));
-
+        ToursPage toursPage = new ToursPage(driver);
         toursPage.clickHomeButton();
     }
 

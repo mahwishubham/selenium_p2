@@ -24,9 +24,9 @@ public class AddTourPage {
 
     public AddTourPage(WebDriver driver) {
         this.driver = driver;
-        this.driver.manage().window().maximize();
+//        this.driver.manage().window().maximize();
         PageFactory.initElements(driver, this);
-        LoginPage loginPage = new LoginPage(driver);
+//        LoginPage loginPage = new LoginPage(driver);
         MyToursPage myToursPage = new MyToursPage(driver);
 
         WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));

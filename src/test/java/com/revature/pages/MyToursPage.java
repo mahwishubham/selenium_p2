@@ -15,7 +15,7 @@ public class MyToursPage {
 
     public MyToursPage(WebDriver driver) {
         this.driver = driver;
-        this.driver.manage().window().maximize();
+//        this.driver.manage().window().maximize();
         PageFactory.initElements(driver, this);
         LoginPage loginPage = new LoginPage(driver);
         loginPage.typeUsername("mc@a.ca");

@@ -38,7 +38,7 @@ public class ToursPage {
 
     public ToursPage(WebDriver driver) {
         this.driver = driver;
-        this.driver.manage().window().maximize();
+//        this.driver.manage().window().maximize();
         PageFactory.initElements(driver, this);
     }
     public void ToursPageLoggedUser(){
@@ -51,6 +51,8 @@ public class ToursPage {
         WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
 
         wdw.until(ExpectedConditions.urlContains("tours.html"));
+        loginPage.clickHomeButton();
+        wdw.until(ExpectedConditions.urlContains("index.html"));
     }
     public void ToursPageLoggedGuide(){
         LoginPage loginPage = new LoginPage(driver);
@@ -62,7 +64,8 @@ public class ToursPage {
         WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
 
         wdw.until(ExpectedConditions.urlContains("mytours.html"));
-        loginPage.clickToursButton();
+        loginPage.clickHomeButton();
+        wdw.until(ExpectedConditions.urlContains("index.html"));
     }
 
     public void clickGuideButton() {

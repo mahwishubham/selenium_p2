@@ -19,7 +19,7 @@ public class UpdateTourPage {
 
     public UpdateTourPage(WebDriver driver) {
         this.driver = driver;
-        this.driver.manage().window().maximize();
+//        this.driver.manage().window().maximize();
         PageFactory.initElements(driver, this);
         LoginPage loginPage = new LoginPage(driver);
 
