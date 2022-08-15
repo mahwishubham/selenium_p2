@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="4.618">
+<testcase classname="Register" name="Valid Registration" time="1.563">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I type in "valid100@email.com" for email...............................passed
+And I type in "PassWord123!" for password...................................passed
+And I type in "John" for first name.........................................passed
+And I type in "Doe" for last name...........................................passed
+And I type in "000-000-0000" for phone number...............................passed
+And I click on the register button in register..............................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+</testsuite>
