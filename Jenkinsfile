@@ -5,17 +5,14 @@ pipeline {
       PATH=sh(script: "echo ${PATH}:/opt/maven/bin", returnStdout: true)
     }
     stages {
-        stage('Build') {
-            parallel {
-                stage('Selenium Test') {
-                    steps {
-                        sh "export PATH=${env.PATH}"
-                        sh "export CUCUMBER_PUBLISH_ENABLED=true"
-                        sh "mvn clean verify"
-                    }
-                }
-            }
-        }
+	stage('Selenium Test') {
+	    steps {
+		sh "export PATH=${env.PATH}"
+		sh "export CUCUMBER_PUBLISH_ENABLED=true"
+		sh "mvn clean verify"
+	    }
+	}
+   }
 
     post {
         always {
