@@ -1,10 +1,5 @@
 pipeline {
     agent any
-    environment {
-      MAVEN_HOME=sh(script: "export MAVEN_HOME=/opt/maven")
-      PATH=sh(script: "export PATH=$PATH:/opt/maven/bin") //, returnStdout: true)
-      CUCUMBER_PUBLISH_ENABLED=true
-    }
     stages {
 	stage('Selenium Test') {
 	    steps {
