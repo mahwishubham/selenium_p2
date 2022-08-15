@@ -24,12 +24,13 @@ Feature: Register
 
     Scenario: Valid Registration
       Given I am at the registration page
-      When I type in "valid6@email.com" for email
+      When I type in "valid7@email.com" for email
       And I type in "PassWord123!" for password
       And I type in "John" for first name
       And I type in "Doe" for last name
       And I type in "000-000-0000" for phone number
       And I click on the register button in register
+      And I accept the alert
       Then I should be redirected to tours.html
 
     Scenario: I click home on register
