@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-      MAVEN_HOME='/opt/maven'
+      MAVEN_HOME="/opt/maven"
       PATH=sh(script: "echo ${PATH}:/opt/maven/bin", returnStdout: true)
     }
     stages {
