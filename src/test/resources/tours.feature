@@ -37,11 +37,11 @@ Feature: tours
     And I click on the guides button in tours
     Then I should be redirected to index.html#guides
 
-#  Scenario: Click on home while logged on
-#    Given I am at the tours page
-#    When I am logged in as a user
-#    And I click on the home button in tours
-#    Then I should be redirected to index.html
+  Scenario: Click on home while logged on
+    Given I am at the tours page
+    When I am logged in as a user
+    And I click on the home button in tours
+    Then I should be redirected to index.html
 
   Scenario: Click on logout while logged on
     Given I am at the tours page
@@ -80,7 +80,7 @@ Feature: tours
     Given I am at the tours page
     When I am logged in as a guide
     And I click on the home button in tours
-    Then I should be redirected to index.html#pois
+    Then I should be redirected to index.html
 
   Scenario: Click on logout while logged on
     Given I am at the tours page
