@@ -72,7 +72,7 @@ Scenario: I click on tours while logged in as user
     Given I am at the home page
     When I am logged in as a guide on home page
     And I click on the tours button
-    Then I should be redirected to index.html
+    Then I should be redirected to index.html#home
 
   Scenario: I click on stops while logged in as guide
     Given I am at the home page
