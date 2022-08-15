@@ -13,11 +13,15 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 @CucumberOptions(glue="com.revature.steps", features={"src/test/resources/index.feature",
         "src/test/resources/login.feature", "src/test/resources/register.feature", "src/test/resources/mytours.feature",
-        "src/test/resources/addtour.feature", "src/test/resources/tours.feature", "src/test/resources/update.feature"})
+        "src/test/resources/addtour.feature", "src/test/resources/tours.feature", "src/test/resources/update.feature"},
+        plugin ={"pretty", "html: results/html", "json:results/json/results.json", "junit:results/junit/cucumber.xml"} )
 public class testrunner extends AbstractTestNGCucumberTests{
 
 
     public static WebDriver driver;
+
+
+
 
     @BeforeMethod
     public void setup() {
