@@ -7,7 +7,9 @@ pipeline {
     stages {
 	stage('Selenium Test') {
 	    steps {
+		sh "export MAVEN_HOME=${env.MAVEN_HOME}"
 		sh "export PATH=${env.PATH}"
+		sh "printenv"
 		sh "export CUCUMBER_PUBLISH_ENABLED=true"
 		sh "mvn clean verify"
 	    }
