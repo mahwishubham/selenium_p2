@@ -32,7 +32,7 @@ Feature: MyTours
   Scenario: Click first delete
     Given I am at the my tours page
     And I click on the first delete button
-#    assert is deleted
+
 
   Scenario: Click logout button
     Given I am at the my tours page
